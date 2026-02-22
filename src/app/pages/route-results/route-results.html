@@ -1,0 +1,57 @@
+<div class="min-h-screen bg-gray-50">
+
+  <!-- Navbar -->
+  <nav class="bg-green-700 px-6 py-4 flex items-center justify-between">
+    <a routerLink="/" class="text-white text-2xl font-bold">🚌 TroTro Guide</a>
+    <span class="text-green-200 text-sm">Navigate Ghana like a local</span>
+  </nav>
+
+  <!-- Search Summary -->
+  <div class="bg-green-600 text-white px-6 py-6">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-green-100 text-sm mb-1">Showing results for</p>
+      <h2 class="text-2xl font-bold">{{ from }} → {{ to }}</h2>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="max-w-2xl mx-auto px-6 py-8">
+
+    <!-- Loading -->
+    <div *ngIf="loading" class="text-center py-12">
+      <p class="text-gray-500 text-lg">Searching routes...</p>
+    </div>
+
+    <!-- No Results -->
+    <div *ngIf="!loading && routes.length === 0" class="text-center py-12">
+      <div class="text-5xl mb-4">🔍</div>
+      <h3 class="text-gray-700 font-bold text-xl mb-2">No routes found</h3>
+      <p class="text-gray-400 mb-6">We don't have this route yet. Try searching differently.</p>
+      <a routerLink="/" class="bg-green-600 text-white px-6 py-3 rounded-lg font-bold">
+        Search Again
+      </a>
+    </div>
+
+    <!-- Route Cards -->
+    <div *ngFor="let route of routes" class="bg-white rounded-xl shadow mb-4 p-6">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-bold text-gray-800 text-lg">{{ route.name }}</h3>
+        <span class="bg-green-100 text-green-700 font-bold px-3 py-1 rounded-full text-sm">
+          GH₵ {{ route.fare_amount }}
+        </span>
+      </div>
+      <div class="text-gray-500 text-sm mb-3">
+        ⏱ {{ route.duration_estimate }}
+      </div>
+      <div class="text-gray-600 text-sm mb-4">
+        📢 Shout: <span class="font-medium italic">"{{ route.what_to_shout }}"</span>
+      </div>
+      <button
+        (click)="viewRoute(route.id)"
+        class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 rounded-lg transition duration-200">
+        View Stops & Landmarks →
+      </button>
+    </div>
+
+  </div>
+</div>

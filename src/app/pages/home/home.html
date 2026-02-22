@@ -1,0 +1,69 @@
+<div class="min-h-screen bg-gray-50">
+  <!-- Navbar -->
+  <nav class="bg-green-700 px-6 py-4 flex items-center justify-between">
+    <h1 class="text-white text-2xl font-bold">🚌 TroTro Guide</h1>
+    <span class="text-green-200 text-sm">Navigate Ghana like a local</span>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="bg-green-600 text-white text-center py-16 px-6">
+    <h2 class="text-4xl font-bold mb-4">Where are you going?</h2>
+    <p class="text-green-100 text-lg mb-8">
+      Find TroTro routes, stops, fares and landmarks — anywhere in Accra
+    </p>
+
+    <!-- Search Box -->
+    <div class="mb-4">
+      <label class="block text-gray-600 text-sm font-medium mb-1 text-left"> From </label>
+      <input
+        type="text"
+        [(ngModel)]="origin"
+        placeholder="e.g. Dome"
+        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500"
+      />
+    </div>
+    <div class="mb-6">
+      <label class="block text-gray-600 text-sm font-medium mb-1 text-left"> To </label>
+      <input
+        type="text"
+        [(ngModel)]="destination"
+        placeholder="e.g. Circle"
+        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500"
+      />
+    </div>
+    <button
+      (click)="search()"
+      class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition duration-200"
+    >
+      Find Route
+    </button>
+  </div>
+
+  <!-- Info Cards -->
+  <div class="max-w-4xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white rounded-xl shadow p-6 text-center">
+      <div class="text-4xl mb-3">🗺️</div>
+      <h3 class="font-bold text-gray-800 text-lg mb-2">Local Stops</h3>
+      <p class="text-gray-500 text-sm">
+        Find stops only locals know — like Atomic First, Commercial Bank and Gym
+      </p>
+    </div>
+    <div class="bg-white rounded-xl shadow p-6 text-center">
+      <div class="text-4xl mb-3">💰</div>
+      <h3 class="font-bold text-gray-800 text-lg mb-2">Fare Guide</h3>
+      <p class="text-gray-500 text-sm">Know exactly what to pay before you board. No surprises.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow p-6 text-center">
+      <div class="text-4xl mb-3">📍</div>
+      <h3 class="font-bold text-gray-800 text-lg mb-2">Landmarks</h3>
+      <p class="text-gray-500 text-sm">
+        Know what to look for on the road so you never miss your stop
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-400 text-sm py-6">
+    TroTro Guide © 2026 — Navigate Ghana like a local
+  </footer>
+</div>
