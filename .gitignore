@@ -42,3 +42,9 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+reverse-geocode-stops.mjs
+import-real-stops.mjs
+src/environments/environment.ts
+src/environments/environment.development.ts
+.firebase/
+.vscode/
